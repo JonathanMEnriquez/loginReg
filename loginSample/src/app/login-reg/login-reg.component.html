@@ -1,0 +1,14 @@
+<div id="body">
+  <div id="errors" *ngIf="errors.length > 0" >
+    <ul *ngFor="let error of errors" >
+      <li class="errors">{{error}}</li>
+    </ul>
+  </div>
+  <form (submit)="addNewUser()" id="login">
+    <p class="loginItem">Name: <input class="loginInput" type="text" [(ngModel)]="user.name" name="nameInput" ></p>
+    <p class="loginItem">Email: <input class="loginInput" type="text" [(ngModel)]="user.email" name="emailInput" ></p>
+    <p class="loginItem">Password: <input class="loginInput" type="password" [(ngModel)]="user.password" name="passwordInput" ></p>
+    <button name="cancel" (click)="clearField($event)">Cancel</button>
+    <input name="submit" type="submit" value="Submit">
+  </form>
+</div>
